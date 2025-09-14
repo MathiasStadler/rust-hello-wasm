@@ -91,9 +91,46 @@ EOF
 ```
 <!-- end of bash code block -->
 <!-- keep the format -->
-
+## Building the package
 <!-- keep the format -->
+```bash <!-- markdownlint-disable-line code-block-style -->
+# inside bash
+wasm-pack build --target web
 
+```
+<!-- end of bash code block -->
+<!-- keep the format -->
+## Creating index.html
+<!-- keep the format -->
+```bash <!-- markdownlint-disable-line code-block-style -->
+cat > ./index.html<< 'EOF'
+<!doctype html>
+<html lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <title>hello-wasm example</title>
+  </head>
+  <body>
+    <script type="module">
+      <!-- import init, { greet } from "./pkg/hello_wasm.js"; --->
+      import init, { greet } from "./pkg/rust_hello_wasm.js";
+      init().then(() => {
+        greet("WebAssembly");
+      });
+    </script>
+  </body>
+</html>
+EOF
+```
+<!-- end of bash code block -->
+<!-- keep the format -->
+## Start with trunk [![alt text][1]](https://crates.io/crates/trunk)
+<!-- keep the format -->
+```bash <!-- markdownlint-disable-line code-block-style -->
+trunk serve
+```
+<!-- end of bash code block -->
+<!-- keep the format -->
 >[!NOTE]
 >Symbol to mark web external links [![alt text][1]](./README.md)
 <!-- spell-checker: disable  -->
