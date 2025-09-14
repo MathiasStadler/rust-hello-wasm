@@ -1,14 +1,41 @@
 # project path
 <!-- keep the format -->
-- We follow thr tutorial  Rust_to_Wasm [![alt text][1]](https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Rust_to_Wasm)
+- We follow the tutorial - Rust_to_Wasm [![alt text][1]](https://developer.mozilla.org/en-US/docs/WebAssembly/Guides/Rust_to_Wasm)
 <!-- keep the format -->
-## Install package
+## Used the last stable version of rust/cargo/rustup
+<!-- keep the format -->
+```bash <!-- markdownlint-disable-line code-block-style -->
+rustup update
+```
+<!-- end of bash code block -->
+<!-- keep the format -->
+<!-- keep the format -->
+## Show which toolchain is active
+<!-- keep the format -->
+```bash <!-- markdownlint-disable-line code-block-style -->
+rustup show
+# or better
+rustup show |sed -n '/active toolchain/,/^$/p'
+```
+<!-- end of bash code block -->
+<!-- keep the format -->
+## Switch between Rust toolchains - Check again - See previous step [![alt text][1]](https://stackoverflow.com/questions/58226545/how-to-switch-between-rust-toolchains)
+<!-- keep the format -->
+```bash <!-- markdownlint-disable-line code-block-style -->
+rustup override set nightly
+rustup override set stable
+# another toolchain by name
+rustup override set 1.85.0-x86_64-unknown-linux-gnu
+```
+<!-- end of bash code block -->
+<!-- keep the format -->
+## Install package used sccache
 <!-- keep the format -->
 ```bash <!-- markdownlint-disable-line code-block-style -->
 cargo uninstall wasm-pack
-# enable sccache local already installed
+# enable sccache if it local already installed
 export RUSTC_WRAPPER=sccache
-cargo install wasm-pack
+time cargo install wasm-pack
 ```
 <!-- end of bash code block -->
 <!-- keep the format -->
@@ -20,6 +47,7 @@ export RUSTC_WRAPPER=sccache
 #cargo new --lib hello-wasm
 cargo init --lib .
 ```
+<!-- end of bash code block -->
 <!-- keep the format -->
 ## Replace ./src/lib.rs with the following
 <!-- keep the format -->
@@ -45,12 +73,12 @@ EOF
 ```bash <!-- markdownlint-disable-line code-block-style -->
 cat > ./Cargo.toml << 'EOF'
 [package]
-name = "hello-wasm"
+name = "rust-hello-wasm"
 version = "0.1.0"
-authors = ["trapapa <trapapa@gmx.com>"]
+authors = ["Mathias Stadler <stadler-mathias@web.de>"]
 description = "A sample project with wasm-pack"
 license = "MIT/Apache-2.0"
-repository = "https://github.com/yourgithubusername/hello-wasm"
+repository = "https://github.com/MathiasStadler/rust-hello-wasm"
 edition = "2024"
 
 [lib]

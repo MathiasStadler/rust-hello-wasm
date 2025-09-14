@@ -3,7 +3,9 @@
         "bindgen",
         "cdylib",
         "RUSTC",
+        "rustup",
         "sccache",
+        "Stadler",
         "trapapa"
     ]
 }

@@ -1,11 +1,11 @@
 [package]
-name = "hello-wasm"
+name = "rust-hello-wasm"
 version = "0.1.0"
-authors = ["Your Name <you@example.com>"]
+authors = ["Mathias Stadler <stadler-mathias@web.de>"]
 description = "A sample project with wasm-pack"
 license = "MIT/Apache-2.0"
-repository = "https://github.com/yourgithubusername/hello-wasm"
-edition = "2021"
+repository = "https://github.com/MathiasStadler/rust-hello-wasm"
+edition = "2024"
 
 [lib]
 crate-type = ["cdylib"]
