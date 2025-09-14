@@ -7,6 +7,8 @@
 - wasm-pack build --target web
 - time wasm-pack build --target web
 - python3 -m http.server
+<!-- markdownlint-disable MD034 -->
 - http://localhost.:8000/index.html
+<!-- markdownlint-enable MD034 -->
 - works - Version 140.0.7339.127 (Official Build) (64-bit)
 - works FF 128.14.0esr (64-bit) without noscript
