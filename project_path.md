@@ -29,11 +29,12 @@ rustup override set 1.85.0-x86_64-unknown-linux-gnu
 ```
 <!-- end of bash code block -->
 <!-- keep the format -->
-## Install package used sccache
+## Install package used sccache - Reduces compilation time immensely
 <!-- keep the format -->
 ```bash <!-- markdownlint-disable-line code-block-style -->
 cargo uninstall wasm-pack
-# enable sccache if it local already installed
+# Enable sccache if it local already installed
+# Reduces compilation time immensely
 export RUSTC_WRAPPER=sccache
 time cargo install wasm-pack
 ```
